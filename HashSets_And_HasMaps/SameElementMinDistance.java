@@ -1,6 +1,7 @@
 package HashSets_And_HasMaps;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /*  
 * Shaggy has an array A consisting of N elements. 
@@ -12,16 +13,22 @@ import java.util.ArrayList;
 public class SameElementMinDistance {
  public int minDistance(ArrayList<Integer> A) {
   int minDistance = Integer.MAX_VALUE;
-  for (int i = 0; i < A.size(); i++) {
-   for (int j = i + 1; j < A.size(); j++) {
-    if (A.get(i) == A.get(j)) {
-     minDistance = Math.min(minDistance, j - i);
-    }
-   }
-  }
-  if (minDistance == Integer.MAX_VALUE) {
-   return -1;
-  }
+
+  // for (int i = 0; i < A.size(); i++) {
+  // for (int j = i + 1; j < A.size(); j++) {
+  // if (A.get(i) == A.get(j)) {
+  // minDistance = Math.min(minDistance, j - i);
+  // }
+  // }
+  // }
+  // if (minDistance == Integer.MAX_VALUE) {
+  // return -1;
+  // }
+
+  // * Using HashMap
+
+  HashMap<Integer, Integer> map = new HashMap<>();
+
   return minDistance;
  }
 }
