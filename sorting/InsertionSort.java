@@ -1,42 +1,32 @@
 package sorting;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class InsertionSort {
 
- public static ArrayList<Integer> insertionSort(ArrayList<Integer> nums, int k) {
-  int i = nums.size() - 1;
+ static void sort(int arr[]) {
+  int n = arr.length;
+  for (int i = 1; i < n; ++i) {
+   int key = arr[i];
+   int j = i - 1;
 
-  // Handle case when k needs to be inserted at the beginning
-  if (i >= 0 && nums.get(i) > k) {
-   nums.add(i + 1, nums.get(i));
-   i--;
+   /*
+    * Move elements of arr[0..i-1], that are
+    * greater than key, to one position ahead
+    * of their current position
+    */
+   while (j >= 0 && arr[j] > key) {
+    arr[j + 1] = arr[j];
+    j = j - 1;
+   }
+   arr[j + 1] = key;
   }
-
-  // Move elements greater than k one position to the right
-  while (i >= 0 && nums.get(i) > k) {
-   nums.set(i + 1, nums.get(i));
-   i--;
-  }
-
-  // Insert k in the correct position
-  nums.set(i + 1, k);
-
-  return nums;
  }
 
  public static void main(String[] args) {
-  ArrayList<Integer> nums = new ArrayList<Integer>();
-  nums.add(1);
-  nums.add(220);
-  nums.add(3012);
-  nums.add(43);
-  nums.add(51);
-
-  ArrayList<Integer> result = insertionSort(nums, 2);
-
-  for (int i = 0; i < result.size(); i++) {
-   System.out.print(result.get(i) + " ");
-  }
+  int[] nums = { 1, 343, 23, 987, 7, 2, 1, 0, 12, 3, 4, 5, 6, 7, 8, 9, 10 };
+  sort(nums);
+  System.out.println("Sorted array: " + Arrays.toString(nums));
  }
 }
