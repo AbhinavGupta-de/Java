@@ -49,6 +49,26 @@ public class MergeTwoSortedSubArrays {
   return result;
  }
 
+ // now with O(1) space complexity
+ public static void merge(int[] nums, int l, int m, int r) {
+  int i = l;
+  int j = m + 1;
+  while (i <= m && j <= r) {
+   if (nums[i] < nums[j]) {
+    i++;
+   } else {
+    int temp = nums[j];
+    for (int d = j; d > i; d--) {
+     nums[d] = nums[d - 1];
+    }
+    nums[i] = temp;
+    i++;
+    j++;
+    m++;
+   }
+  }
+ }
+
  public static void main(String[] args) {
   int[] nums = { 8, 1, 3, 6, 11, 2, 4, 9, 7, 6 };
   int l = 2;
@@ -56,6 +76,9 @@ public class MergeTwoSortedSubArrays {
   int r = 7;
   int[] result = sort(nums, l, m, r);
   System.out.println("Sorted Array: " + Arrays.toString(result));
+
+  merge(nums, l, m, r);
+  System.out.println("Sorted Array: " + Arrays.toString(nums));
  }
 
 }
