@@ -1,5 +1,7 @@
 package sorting;
 
+import java.util.Arrays;
+
 public class TimSort {
 
  public static void sort(int[] arr, int start, int end) {
@@ -14,6 +16,8 @@ public class TimSort {
  public static void main(String[] args) {
   int[] arr = { 5, 4, 3, 2, 1 };
   sort(arr, 0, arr.length - 1);
+
+  System.out.println("Sorted Array: " + Arrays.toString(arr));
  }
 
 }
