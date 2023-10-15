@@ -16,6 +16,6 @@ public class dotPattern {
             }
             System.out.println();
         }
-
+        scan.close();
     }
 }

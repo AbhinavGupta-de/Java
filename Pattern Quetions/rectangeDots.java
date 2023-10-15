@@ -12,5 +12,6 @@ public class rectangeDots {
             }
             System.out.println();
         }
+        scan.close();
     }
 }

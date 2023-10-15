@@ -4,8 +4,8 @@ public class TrappingRainWater {
 
  public static int rainWaterTrapped(int[] nums) {
   int n = nums.length;
-  int[] left = new int[n];
-  int[] right = new int[n];
+  // int[] left = new int[n];
+  // int[] right = new int[n];
   int water = 0;
 
   // left[0] = nums[0];

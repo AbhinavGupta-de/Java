@@ -1,6 +1,6 @@
 package goodQuestions;
 
-import java.util.*;
+// import java.util.*;
 
 // * Have to find the minimum length of the subarray which contains both the largest and the smallest element of the array.
 public class MinimumLengthArray {

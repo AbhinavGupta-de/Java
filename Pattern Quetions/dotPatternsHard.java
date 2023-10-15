@@ -41,5 +41,6 @@ public class dotPatternsHard {
             }
             System.out.println();
         }
+        scan.close();
     }
 }

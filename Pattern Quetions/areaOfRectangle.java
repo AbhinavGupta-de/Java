@@ -15,5 +15,6 @@ public class areaOfRectangle {
         double area = areaRectangle(length, breadth);
         System.out.println();
         System.out.println("The area of the Rectangle is: " + area);
+        sc.close();
     }
 }

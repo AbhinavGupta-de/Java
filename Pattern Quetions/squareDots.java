@@ -11,6 +11,6 @@ public class squareDots {
             }
             System.out.println();
         }
-
+        scan.close();
     }
 }

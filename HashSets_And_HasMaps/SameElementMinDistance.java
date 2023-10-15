@@ -1,7 +1,7 @@
 package HashSets_And_HasMaps;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+// import java.util.HashMap;
 
 /*  
 * Shaggy has an array A consisting of N elements. 
@@ -27,7 +27,7 @@ public class SameElementMinDistance {
 
   // * Using HashMap
 
-  HashMap<Integer, Integer> map = new HashMap<>();
+  // HashMap<Integer, Integer> map = new HashMap<>();
 
   return minDistance;
  }

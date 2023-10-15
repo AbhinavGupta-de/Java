@@ -77,5 +77,6 @@ public class traingleDots {
             }
             System.out.println();
         }
+        scan.close();
     }
 }
