@@ -39,7 +39,7 @@ public class Test {
    }
    System.out.println();
   }
-
+  scan.close();
  }
 }
 

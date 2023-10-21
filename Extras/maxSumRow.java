@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class maxSumRow {
 
-  public static int maxSumRow(int[][] arr) {
+  public static int MaxSumRow(int[][] arr) {
     int maxSum = 0;
     int maxRow = 0;
     for (int i = 0; i < arr.length; i++) {
@@ -30,7 +30,9 @@ public class maxSumRow {
           arr[j][k] = scan.nextInt();
         }
       }
-      System.out.println(maxSumRow(arr));
+      System.out.println(MaxSumRow(arr));
     }
+
+    scan.close();
   }
 }
