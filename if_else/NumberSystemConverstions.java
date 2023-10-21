@@ -27,5 +27,6 @@ public class NumberSystemConverstions {
         int number = sc.nextInt();
         int answer = DecimalToBinarry(number);
         System.out.println(answer);
+        sc.close();
     }
 }

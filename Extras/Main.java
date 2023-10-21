@@ -1,7 +1,7 @@
-import java.util.Scanner;
+// import java.util.Scanner;
 
 // import Image.ImageTest;
-import functions.SquareRoot;
+// import functions.SquareRoot;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,3 @@
-import java.lang.*;
 import java.util.*;
 
 public class electricityBill {
@@ -32,7 +31,7 @@ public class electricityBill {
 
         bill = bill * 0.2;
         System.out.println(bill);
-
+        sc.close();
     }
 
 }

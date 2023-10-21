@@ -35,5 +35,6 @@ public class maxInt {
 
         // Printing the answer
         System.out.println("The maximum number is: " + answer);
+        sc.close();
     }
 }
