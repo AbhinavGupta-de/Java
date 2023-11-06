@@ -7,6 +7,10 @@ public class QuickSort {
  }
 
  public void sortArray(int[] arr, int start, int end) {
+
+  int randomPivot = (int) (Math.random() * (end - start + 1)) + start;
+  swap(arr, randomPivot, end);
+
   if (start <= end) {
    int pivot = partition(arr, start, end);
    sortArray(arr, start, pivot - 1);
