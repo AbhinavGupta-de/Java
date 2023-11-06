@@ -53,6 +53,24 @@ public class SortLastElement {
   arr[j] = temp;
  }
 
+ // Overloading the method so that it works on portion of the array
+ public void sortAccordingToLastElement(int[] arr, int start, int end) {
+  int lastElement = arr[end];
+  int i = start;
+  int j = start;
+
+  while (i < end) {
+   if (arr[i] < lastElement) {
+    swap(arr, i, j);
+    j++;
+   }
+
+   i++;
+  }
+
+  swap(arr, j, end);
+ }
+
  public static void main(String[] args) {
   SortLastElement sle = new SortLastElement();
   int[] arr = { 9, 8, 1, 6, 5, 11, 4, 7 };
