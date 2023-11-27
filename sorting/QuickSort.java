@@ -8,9 +8,6 @@ public class QuickSort {
 
  public void sortArray(int[] arr, int start, int end) {
 
-  int randomPivot = (int) (Math.random() * (end - start + 1)) + start;
-  swap(arr, randomPivot, end);
-
   if (start <= end) {
    int pivot = partition(arr, start, end);
    sortArray(arr, start, pivot - 1);
@@ -19,12 +16,16 @@ public class QuickSort {
  }
 
  public int partition(int[] arr, int start, int end) {
+  int randomPivot = (int) Math.floor(Math.random() * (end - start + 1) + start);
+  // System.out.println(randomPivot);
+  swap(arr, randomPivot, end);
+
   int lastElement = arr[end];
   int i = start;
   int j = start;
 
   while (i < end) {
-   if (arr[i] < lastElement) {
+   if (arr[i] <= lastElement) {
     swap(arr, i, j);
     j++;
    }
