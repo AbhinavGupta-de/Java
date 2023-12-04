@@ -179,6 +179,9 @@ public class LinkedList {
   list.addFirst(1);
 
   list.print();
+
+  list.add(5, 1);
+  list.print();
  }
 
 }
