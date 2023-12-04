@@ -1,5 +1,3 @@
-package HashSets_And_HasMaps;
-
 import java.util.HashMap;
 
 public class CheckPallindrome {

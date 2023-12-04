@@ -1,4 +1,3 @@
-package HashSets_And_HasMaps;
 
 public class KOccurences {
  public static int kOccurences(int[] A, int k) {
