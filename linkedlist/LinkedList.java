@@ -161,6 +161,49 @@ public class LinkedList {
   this.size = 0;
  }
 
+ public void reverse() {
+  Node current = this.head;
+  Node prev = null;
+  Node next = null;
+  while (current != null) {
+   next = current.next;
+   current.next = prev;
+   prev = current;
+   current = next;
+  }
+  this.head = prev;
+ }
+
+ public void reverseRecursive() {
+  this.head = reverseRecursive(this.head);
+ }
+
+ private Node reverseRecursive(Node head) {
+  if (head == null || head.next == null) {
+   return head;
+  }
+  Node newHead = reverseRecursive(head.next);
+  head.next.next = head;
+  head.next = null;
+  return newHead;
+ }
+
+ public void reverseTillK(int k) {
+  Node current = this.head;
+  Node prev = null;
+  Node next = null;
+  int count = 0;
+  while (current != null && count < k) {
+   next = current.next;
+   current.next = prev;
+   prev = current;
+   current = next;
+   count++;
+  }
+  this.head.next = current;
+  this.head = prev;
+ }
+
  public void print() {
   Node current = this.head;
   while (current != null) {
