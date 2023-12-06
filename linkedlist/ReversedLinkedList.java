@@ -32,41 +32,39 @@ public class ReversedLinkedList {
 
  public ListNode reverseList(ListNode head, int start, int end) {
   // 1 based index of the linked list is given
-  ListNode currentNode = head;
+  ListNode dummy = new ListNode(0); // Create a dummy node to simplify code
+  dummy.next = head;
+  ListNode currentNode = dummy;
+  int index = 1;
 
-  while (currentNode != null) {
-   if (currentNode.val == start) {
-    currentNode = reverse(currentNode, end);
-    break;
-   }
+  // Move to the node just before the start index
+  while (index < start) {
    currentNode = currentNode.next;
+   index++;
   }
 
-  return currentNode;
+  // Reverse the sublist from start to end
+  currentNode.next = reverse(currentNode.next, end - start + 1);
+
+  return dummy.next; // Return the updated list
  }
 
  public ListNode reverse(ListNode head, int k) {
-  ListNode currentNode = head;
-  ListNode previousNode = null;
-  ListNode nextNode = null;
+  ListNode prev = null;
+  ListNode curr = head;
 
-  while (currentNode != null) {
-
-   if (currentNode.val == k) {
-    currentNode.next = previousNode;
-    previousNode = currentNode;
-    currentNode = nextNode;
-    previousNode.next = currentNode;
-    break;
-   }
-
-   nextNode = currentNode.next;
-   currentNode.next = previousNode;
-   previousNode = currentNode;
-   currentNode = nextNode;
+  // Reverse the sublist with k nodes
+  for (int i = 0; i < k; i++) {
+   ListNode nextNode = curr.next;
+   curr.next = prev;
+   prev = curr;
+   curr = nextNode;
   }
 
-  return previousNode;
+  // Connect the reversed sublist back to the original list
+  head.next = curr;
+
+  return prev; // Return the new head of the reversed sublist
  }
 
  public ListNode reverseKGroup(ListNode head, int k) {
