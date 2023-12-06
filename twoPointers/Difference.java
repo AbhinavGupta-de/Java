@@ -1,4 +1,4 @@
-package TwoPointers;
+package twoPointers;
 
 /**
  * Difference
