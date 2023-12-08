@@ -1,22 +1,22 @@
-package TwoPointers;
+package twoPointers;
 
 public class PairWithGivenSum {
 
- public boolean pairExist(int[] A, int B) {
+  public boolean pairExist(int[] A, int B) {
 
-  int i = 0;
-  int j = 1;
+    int i = 0;
+    int j = 1;
 
-  while (i < A.length && j < A.length) {
-   if (i != j && A[j] + A[i] == B)
-    return true;
-   else if (A[j] + A[i] < B)
-    j++;
-   else
-    i++;
+    while (i < A.length && j < A.length) {
+      if (i != j && A[j] + A[i] == B)
+        return true;
+      else if (A[j] + A[i] < B)
+        j++;
+      else
+        i++;
+    }
+
+    return false;
   }
-
-  return false;
- }
 
 }

@@ -1,4 +1,4 @@
-package TwoPointers;
+package twoPointers;
 
 import java.util.HashMap;
 import java.util.HashSet;
