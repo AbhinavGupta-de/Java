@@ -1,7 +1,5 @@
 package linkedlist;
 
-import goodQuestions.maxSumInPrefix;
-
 class ListNode {
  public int val;
  public ListNode next;
