@@ -36,7 +36,7 @@ public class StackUsingLinkedList {
    this.head = newNode;
    top++;
   } else {
-   // Handle stack overflow, e.g., throw an exception
+   // could throw an exception but don't wanna
   }
  }
 
