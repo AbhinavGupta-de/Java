@@ -27,18 +27,19 @@ public class DoubliLinkedList {
   if (node == null)
    return;
 
-  if (node.prev == null) {
+  if (node == this.head) {
    this.head = node.next;
-   if (this.head != null)
+   if (this.head != null) {
     this.head.prev = null;
+   }
+  } else if (node == this.tail) {
+   this.tail = node.prev;
   } else {
    node.prev.next = node.next;
-   if (node.next != null)
+   if (node.next != null) {
     node.next.prev = node.prev;
+   }
   }
-
-  if (node == this.tail)
-   this.tail = node.prev;
 
   size--;
  }

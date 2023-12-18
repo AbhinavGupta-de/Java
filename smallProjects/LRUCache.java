@@ -52,24 +52,26 @@ public class LRUCache {
 
  public void set(Long key, Object value) {
 
+  if (map1.containsKey(key)) {
+   Item item = map1.get(key);
+   DoubliNode node = item.node;
+   list.deleteNode(node);
+   DoubliNode newNode = new DoubliNode(key, value);
+   list.addAtHead(newNode);
+   item.node = newNode;
+   item.val = value;
+   return;
+  }
+
   if (this.len < this.size) {
-   if (map1.containsKey(key)) {
-    // Item item = map1.get(key);
-    // DoubliNode node = item.node;
-    // list.deleteNode(node);
-    // node.value = value;
-    // node = list.head;
-    // list.addAtHead(node);
-    return;
-   } else {
-    DoubliNode node = new DoubliNode(key, value);
-    list.addAtHead(node);
-    node = list.head;
-    System.out.println("Tail Value is: " + list.tail.value);
-    Item newItem = new Item(node, value);
-    map1.put(key, newItem);
-    len++;
-   }
+
+   DoubliNode node = new DoubliNode(key, value);
+   list.addAtHead(node);
+   node = list.head;
+   Item newItem = new Item(node, value);
+   map1.put(key, newItem);
+   len++;
+
   } else {
    map1.remove(list.tail.key);
    list.removeLast();
@@ -83,32 +85,24 @@ public class LRUCache {
  }
 
  public static void main(String[] args) {
-  LRUCache cache = new LRUCache(4);
+  LRUCache cache = new LRUCache(2);
 
-  Object val = 45;
+  Object val = 6;
+  cache.set(2L, val);
+  System.out.println("The Value of the key: " + 2L + " is: " + cache.get(2L));// 1
+  System.out.println("The Value of the key: " + 1 + " is: " + cache.get(1L));// 3
 
+  val = 5;
   cache.set(1L, val);
-  System.out.println("The Value of the key: " + 1 + " is: " + cache.get(1L));// 1
+  System.out.println("The Value of the key: " + 2L + " is: " + cache.get(2L));// 1
 
-  val = 56;
-  cache.set(5L, val);
-  System.out.println("The Value of the key: " + 5L + " is: " + cache.get(5L));// 2
+  val = 2;
+  cache.set(1L, val);
+  System.out.println("The Value of the key: " + 1 + " is: " + cache.get(1L));// 3
 
-  System.out.println("The Value of the key: " + 9 + " is: " + cache.get(9L));// 1
-
-  val = 77;
-  cache.set(8L, val);
-  System.out.println("The Value of the key: " + 8 + " is: " + cache.get(8L));// 3
-
-  val = 66;
-  cache.set(11L, val);
-  System.out.println("The Value of the key: " + 11 + " is: " + cache.get(11L));// 4
-
-  val = 100;
-  cache.set(19L, val);
-  System.out.println("The Value of the key: " + 19 + " is: " + cache.get(19L));// 5
-
-  System.out.println("The Value of the key: " + 1 + " is: " + cache.get(1L));// 1
+  // val = 4;
+  // cache.set(4L, val);
+  System.out.println("The Value of the key: " + 2 + " is: " + cache.get(2L));// 4
 
  }
 
