@@ -5,16 +5,16 @@ package linkedlist;
  * 
  */
 
-class ListNode {
- int val;
- ListNode next;
-
- ListNode(int x) {
-  val = x;
- }
-}
-
 public class MiddleNode {
+
+ static class ListNode {
+  int val;
+  ListNode next;
+
+  ListNode(int x) {
+   val = x;
+  }
+ }
 
  // Three approaches
  // 1. Traverse the list and count the number of nodes. Then traverse again and
