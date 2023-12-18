@@ -3,7 +3,7 @@ package linkedlist;
 public class DoubliLinkedList {
  public DoubliNode head;
  public DoubliNode tail;
- long size;
+ public long size;
 
  public DoubliLinkedList() {
   this.head = null;
@@ -15,31 +15,42 @@ public class DoubliLinkedList {
   if (this.head == null) {
    this.head = node;
    this.tail = node;
-   size++;
-   return;
+  } else {
+   node.next = head;
+   head.prev = node;
+   this.head = node;
   }
-
-  if (this.tail == null)
-   this.tail = this.head;
-  node.next = head;
-  node.prev = null;
-  head.prev = node;
-  this.head = node;
   size++;
  }
 
  public void deleteNode(DoubliNode node) {
+  if (node == null)
+   return;
+
   if (node.prev == null) {
-   node.next.prev = null;
    this.head = node.next;
+   if (this.head != null)
+    this.head.prev = null;
   } else {
    node.prev.next = node.next;
+   if (node.next != null)
+    node.next.prev = node.prev;
   }
-  removeLast();
+
+  if (node == this.tail)
+   this.tail = node.prev;
+
+  size--;
  }
 
  public void removeLast() {
-  this.tail = tail.prev;
-
+  if (this.tail != null) {
+   this.tail = this.tail.prev;
+   if (this.tail != null)
+    this.tail.next = null;
+   else
+    this.head = null;
+   size--;
+  }
  }
 }
