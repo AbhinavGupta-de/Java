@@ -1,4 +1,4 @@
-package smallProjects;
+package SmallProjects;
 
 /**
  * Calculator
