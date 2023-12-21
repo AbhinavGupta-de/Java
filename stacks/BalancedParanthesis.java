@@ -8,30 +8,18 @@ public class BalancedParanthesis {
  public int balancedParan(String str) {
 
   for (char i : str.toCharArray()) {
-   if (i == '{' || i == '[' || i == '(')
+   if (i == '(' || i == '{' || i == '[') {
     stack.push(i);
-
-   else if (i == ')') {
-    if (stack.peek().equals('(')) {
-     stack.pop();
-    } else
-     return -1;
-   }
-
-   else if (i == ']') {
-    if (stack.peek().equals('['))
+   } else {
+    if (!stack.isEmpty() && (i == stack.peek() + 2 || i == stack.peek() + 1))
      stack.pop();
     else
-     return -1;
-   }
-
-   else if (i == '}') {
-    if (stack.peek().equals('{'))
-     stack.pop();
-    else
-     return -1;
+     return 0;
    }
   }
+
+  if (stack.isEmpty())
+   return 1;
 
   return 0;
  }
