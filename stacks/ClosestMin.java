@@ -1,4 +1,4 @@
-package arrays;
+package stacks;
 
 import java.util.Stack;
 
