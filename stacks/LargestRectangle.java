@@ -63,15 +63,6 @@ public class LargestRectangle {
   int[] x = closestMinLeft(nums);
   int[] y = closestMinRight(nums);
 
-  // for (int i : x) {
-  // System.out.print(i + " ");
-  // }
-  // System.out.println();
-  // for (int i : y) {
-  // System.out.print(i + " ");
-  // }
-  // System.out.println();
-
   int ans = 0;
 
   for (int i = 0; i < x.length; i++) {
