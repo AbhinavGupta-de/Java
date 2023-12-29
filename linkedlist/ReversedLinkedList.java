@@ -4,16 +4,16 @@ package linkedlist;
  * ReversedLinkedList
  */
 
-class ListNode {
- int val;
- ListNode next;
-
- ListNode(int x) {
-  val = x;
- }
-}
-
 public class ReversedLinkedList {
+
+ private class ListNode {
+  int val;
+  ListNode next;
+
+  ListNode(int x) {
+   val = x;
+  }
+ }
 
  public ListNode reverseList(ListNode head) {
   ListNode currentNode = head;
