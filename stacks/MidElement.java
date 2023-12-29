@@ -8,9 +8,6 @@ public class MidElement {
    public Node next;
    public Node prev;
 
-   public Node() {
-   }
-
    public Node(int value) {
     this.value = value;
     next = null;
