@@ -10,8 +10,8 @@ public class ReversedLinkedList {
   int val;
   ListNode next;
 
-  ListNode(int x) {
-   val = x;
+  ListNode(int val) {
+   this.val = val;
   }
  }
 
@@ -33,6 +33,7 @@ public class ReversedLinkedList {
  public ListNode reverseList(ListNode head, int start, int end) {
   // 1 based index of the linked list is given
   ListNode dummy = new ListNode(0); // Create a dummy node to simplify code
+  dummy.val = 0;
   dummy.next = head;
   ListNode currentNode = dummy;
   int index = 1;
