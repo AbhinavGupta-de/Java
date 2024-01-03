@@ -39,8 +39,14 @@ public class ImplementQueueUsingStack {
      reverse.push(front.pop());
     }
    }
-
    return reverse.peek();
+  }
+
+  public boolean isEmpty() {
+   if (reverse.isEmpty() && front.isEmpty())
+    return true;
+
+   return false;
   }
 
  }
@@ -58,6 +64,7 @@ public class ImplementQueueUsingStack {
 
   System.out.println(queue.dequeue());
   System.out.println(queue.front());
+  System.out.println(queue.isEmpty());
 
  }
 
