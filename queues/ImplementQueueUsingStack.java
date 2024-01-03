@@ -40,7 +40,7 @@ public class ImplementQueueUsingStack {
     }
    }
 
-   return reverse.pop();
+   return reverse.peek();
   }
 
  }
