@@ -1,3 +1,5 @@
+package hashing;
+
 import java.util.HashMap;
 
 public class CheckPallindrome {

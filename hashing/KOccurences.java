@@ -1,3 +1,4 @@
+package hashing;
 
 public class KOccurences {
  public static int kOccurences(int[] A, int k) {
