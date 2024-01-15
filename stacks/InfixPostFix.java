@@ -29,27 +29,18 @@ public class InfixPostFix {
         stack.push(c);
 
       } else if (c == ')') {
-
         while (!stack.empty() && stack.peek() != '(') {
-
           result += stack.peek();
           stack.pop();
-
         }
         if (!stack.empty())
           stack.pop();
-
-      }
-
-      else {
-
+      } else {
         while (!stack.empty() && precedence(stack.peek()) >= precedence(c)) {
           result += stack.peek();
           stack.pop();
         }
-
         stack.push(c);
-
       }
     }
 
