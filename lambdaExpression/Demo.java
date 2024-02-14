@@ -5,6 +5,11 @@ interface Flying {
  void fly();
 }
 
+@FunctionalInterface
+interface Kicking {
+ void kick(int i);
+}
+
 public class Demo {
  public static void main(String[] args) {
 
@@ -30,6 +35,12 @@ public class Demo {
 
   obj3.fly();
 
+  // How to accept paramters
+  // you don't need to mention the type of the paramter as you have already
+  // defined that in the interface
+  Kicking kicck = i -> System.out.println("Kick " + i + " times!!");
+
+  kicck.kick(5);
  }
 
 }
