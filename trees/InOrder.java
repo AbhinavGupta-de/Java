@@ -57,4 +57,35 @@ public class InOrder {
 
  }
 
+ public List<Integer> inOrderTraversalConstantSpace(TreeNode root) {
+
+  List<Integer> result = new ArrayList<>();
+  TreeNode current = root;
+  TreeNode pre = null;
+
+  while (current != null) {
+   if (current.left == null) {
+    result.add((Integer) current.value);
+    current = current.right;
+   } else {
+    pre = current.left;
+    while (pre.right != null && pre.right != current) {
+     pre = pre.right;
+    }
+
+    if (pre.right == null) {
+     pre.right = current;
+     current = current.left;
+    } else {
+     pre.right = null;
+     result.add((Integer) current.value);
+     current = current.right;
+    }
+   }
+  }
+
+  return result;
+
+ }
+
 }
