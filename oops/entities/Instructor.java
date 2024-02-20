@@ -18,6 +18,13 @@ public class Instructor {
   this.level = level;
  }
 
+ public Instructor(Instructor instructor) {
+  this.name = instructor.name;
+  this.email = instructor.email;
+  this.password = instructor.password;
+  this.level = instructor.level;
+ }
+
  public void setPassword(String password) {
   this.password = password;
  }
@@ -37,5 +44,7 @@ public class Instructor {
  public Level getLevel() {
   return this.level;
  }
+
+ // create a deepcopy constructor here
 
 }

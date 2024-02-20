@@ -1,5 +1,6 @@
 package oops.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Batch {
@@ -48,4 +49,13 @@ public class Batch {
   return this.instructor;
  }
 
+ // A deep copy constructor
+ public Batch(Batch batch) {
+
+  this.name = batch.name;
+  this.startDate = batch.startDate;
+  this.endDate = batch.endDate;
+  this.students = new ArrayList<>(batch.students);
+  this.instructor = new Instructor(batch.instructor);
+ }
 }
